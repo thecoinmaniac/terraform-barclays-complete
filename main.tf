@@ -21,7 +21,7 @@ module "eks" {
 }
 
 module "name" {
-  source = "source"
+  source = "./modules/my-key"
   key-name = "my-key"
   public-key-file-name = "${file("./my-key/my-key.pub")}"
 
