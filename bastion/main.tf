@@ -7,7 +7,7 @@ module "ssh_sg" {
 
   name        = "ssh-sg"
   description = "Security group which is to allow SSH from Bastion"
-  vpc_id      = data.aws_vpc.eks.id
+  vpc_id      = var.vpc_id
 
   ingress_cidr_blocks = ["196.192.165.10/32"]
   ingress_rules       = ["ssh-tcp"]

@@ -18,6 +18,7 @@ module "vpc" {
 module "bastion" {
   source = "./bastion"
   ec2-key = var.ec2-key
+  vpc_id = module.vpc.vpc_id
   
 }
 

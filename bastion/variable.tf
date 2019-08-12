@@ -25,7 +25,3 @@ data "aws_subnet_ids" "public" {
     Name = "${var.cluster-name}-eks-public"
   }
 }
-
-data "aws_vpc" "eks" {
-  id = "${module.vpc.vpc_id}"
-}
