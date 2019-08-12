@@ -14,3 +14,8 @@ module "vpc" {
   private-subnet-cidr     = var.private-subnet-cidr
   public-subnet-cidr      = var.public-subnet-cidr
 }
+
+module "bastion" {
+  source = "./bastion"
+  
+}
