@@ -2,6 +2,9 @@ provider "aws" {
   version = ">= 2.11"
   region  = var.aws-region
 }
+
+provider "http" {}
+
 data "aws_availability_zones" "available" {
 }
 
