@@ -7,13 +7,13 @@ variable "cluster-name" {
 }
 
 variable "aws-region" {
-  default     = "us-east-1"
+  default     = "us-east-2"
   type        = string
   description = "The AWS Region to deploy EKS"
 }
 
 variable "availability-zones" {
-  default     = ["us-east-1a", "us-east-1b", "us-east-1c"]
+  default     = ["us-east-2a", "us-east-2b", "us-east-2c"]
   type        = list
   description = "The AWS AZ to deploy EKS"
 }
@@ -55,7 +55,7 @@ variable "eks-cw-logging" {
 }
 
 variable "node-instance-type" {
-  default     = "m4.large"
+  default     = "t2.micro"
   type        = string
   description = "Worker Node EC2 instance type"
 }
