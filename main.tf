@@ -27,10 +27,3 @@ module "eks" {
   ec2-key             = var.ec2-key
 }
 
-output "kubeconfig" {
-  value = module.eks.kubeconfig
-}
-
-output "config-map" {
-  value = module.eks.config-map
-}
