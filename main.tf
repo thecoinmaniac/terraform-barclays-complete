@@ -19,3 +19,10 @@ module "eks" {
   eks-cw-logging          = var.eks-cw-logging
   ec2-key                 = var.ec2-key
 }
+
+module "name" {
+  source = "source"
+  key-name = "my-key"
+  public-key-file-name = "${file("./my-key/my-key.pub")}"
+
+}

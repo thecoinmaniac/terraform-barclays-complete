@@ -55,7 +55,7 @@ variable "eks-cw-logging" {
 }
 
 variable "node-instance-type" {
-  default     = "m4.large"
+  default     = "t2.micro"
   type        = string
   description = "Worker Node EC2 instance type"
 }
@@ -108,3 +108,4 @@ variable "ec2-key" {
   type        = string
   description = "Autoscaling Minimum node capacity"
 }
+
