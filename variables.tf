@@ -12,11 +12,11 @@ variable "aws-region" {
   description = "The AWS Region to deploy EKS"
 }
 
-variable "availability-zones" {
-  default     = ["us-east-2a", "us-east-2b", "us-east-2c"]
-  type        = list
-  description = "The AWS AZ to deploy EKS"
-}
+# variable "availability-zones" {
+#   default     = ["us-east-2a", "us-east-2b", "us-east-2c"]
+#   type        = list
+#   description = "The AWS AZ to deploy EKS"
+# }
 
 variable "k8s-version" {
   default     = "1.13"
