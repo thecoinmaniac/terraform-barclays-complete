@@ -1,3 +1,8 @@
+provider "aws" {
+  version = ">= 2.11"
+  region  = var.aws-region
+}
+
 module "eks" {
   source                  = "./modules/eks"
   aws-region              = var.aws-region
