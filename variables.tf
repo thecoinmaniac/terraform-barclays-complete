@@ -12,11 +12,11 @@ variable "aws-region" {
   description = "The AWS Region to deploy EKS"
 }
 
-# variable "availability-zones" {
-#   default     = ["us-east-1a", "us-east-1b", "us-east-1c"]
-#   type        = list
-#   description = "The AWS AZ to deploy EKS"
-# }
+variable "availability-zones" {
+  default     = ["us-east-1a", "us-east-1b", "us-east-1c"]
+  type        = list
+  description = "The AWS AZ to deploy EKS"
+}
 
 variable "k8s-version" {
   default     = "1.13"
@@ -107,9 +107,4 @@ variable "ec2-key" {
   default     = "my-key"
   type        = string
   description = "Autoscaling Minimum node capacity"
-}
-
-#######################################################################
-
-data "aws_availability_zones" "available" {
 }
