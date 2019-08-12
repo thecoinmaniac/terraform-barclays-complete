@@ -17,5 +17,14 @@ module "vpc" {
 
 module "bastion" {
   source = "./bastion"
+  ec2-key = var.ec2-key
   
+}
+
+module "my-key" {
+  source = "./my-key"
+
+  key-name = "my-key"
+  public-key-file-name = "${file("./my-key/my-key.pub")}"
+
 }
