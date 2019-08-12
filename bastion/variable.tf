@@ -11,7 +11,6 @@ data "aws_ami" "bastion" {
   }
 }
 
-variable "ec2-key" {}
 
 data "aws_security_group" "bastion" {
   vpc_id = data.aws_vpc.eks.id
@@ -25,3 +24,9 @@ data "aws_subnet_ids" "public" {
     Name = "${var.cluster-name}-eks-public"
   }
 }
+
+##########################
+
+variable "vpc_id" {}
+
+variable "ec2-key" {}
