@@ -23,7 +23,7 @@ module "mariadb-asg" {
 
   # Auto scaling group
   asg_name                  = "mariadb-asg"
-  vpc_zone_identifier       = data.aws_subnet_ids.private.ids[2]
+  vpc_zone_identifier       = data.aws_subnet_ids.private.ids
   health_check_type         = "EC2"
   min_size                  = 1
   max_size                  = 1
