@@ -1,11 +1,11 @@
 
 ### kafka hosts
-module "kafka-asg" {
+module "mariadb-asg" {
   source  = "terraform-aws-modules/autoscaling/aws"
   version = "~> 3.0"
-  name    = "kafka-asg"
+  name    = "mariadb-asg"
 
-  lc_name = "kafka-lc"
+  lc_name = "mariadb-lc"
 
   image_id                     = data.aws_ami.bastion.id
   instance_type                = "t2.micro"
@@ -22,19 +22,19 @@ module "kafka-asg" {
   ]
 
   # Auto scaling group
-  asg_name                  = "kafka"
-  vpc_zone_identifier       = data.aws_subnet_ids.private.ids
+  asg_name                  = "mariadb-asg"
+  vpc_zone_identifier       = data.aws_subnet_ids.private.ids[2]
   health_check_type         = "EC2"
-  min_size                  = 4
-  max_size                  = 4
-  desired_capacity          = 4
+  min_size                  = 1
+  max_size                  = 1
+  desired_capacity          = 1
   wait_for_capacity_timeout = 0
   key_name                  = var.ec2-key
 
   tags = [
     {
       key                 = "Name"
-      value               = "kafka"
+      value               = "mariadb"
       propagate_at_launch = true
     }
   ]
