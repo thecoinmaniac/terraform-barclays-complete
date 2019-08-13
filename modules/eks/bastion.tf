@@ -1,7 +1,4 @@
 ### bastion
-
-variable "ec2-key" {}
-
 ### bastion hosts
 module "bastion-asg" {
   source  = "terraform-aws-modules/autoscaling/aws"

@@ -1,8 +1,5 @@
-### bastion
 
-variable "ec2-key" {}
-
-### bastion hosts
+### kafka hosts
 module "kafka-asg" {
   source  = "terraform-aws-modules/autoscaling/aws"
   version = "~> 3.0"
