@@ -33,6 +33,11 @@ data "aws_security_group" "bastion" {
   name   = "${module.ssh_sg.this_security_group_name}"
 }
 
+data "aws_security_group" "ec2private" {
+  vpc_id = data.aws_vpc.eks.id
+  name   = "${module.ec2-private-subnet-sg.this_security_group_name}"
+}
+
 data "aws_ami" "bastion" {
   most_recent = true
   owners      = ["137112412989"]

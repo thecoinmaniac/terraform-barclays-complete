@@ -29,5 +29,4 @@ module "name" {
   source = "./modules/my-key"
   key-name = "my-key"
   public-key-file-name = "${file("./modules/my-key/my-key.pub")}"
-
 }
